@@ -57,7 +57,7 @@
                                     <DiffuseMaterial>
                                         <DiffuseMaterial.Brush>
                                             <ImageBrush 
-                                                ImageSource="/pedra.jpeg"
+                                                ImageSource="pedra.jpeg"
                                                 TileMode="Tile" 
                                                 ViewportUnits="Absolute" />
                                         </DiffuseMaterial.Brush>
@@ -240,4 +240,5 @@
 
         </Viewport3D>
     </Grid>
+
 </Window>
