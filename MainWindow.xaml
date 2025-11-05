@@ -1,0 +1,243 @@
+﻿<Window x:Class="casaPIC2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:casaPIC2"
+        mc:Ignorable="d"
+        Title="Trabalho C2 - Casa 3D" Height="600" Width="800">
+    <Grid>
+
+        <Viewport3D Name="mainViewport">
+
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="camera"
+                                   Position="10, 5, 20" 
+                                   LookDirection="-10, -5, -30" 
+                                   UpDirection="0, 1, 0" 
+                                   FieldOfView="55" />
+            </Viewport3D.Camera>
+
+            <Viewport3D.Children>
+                <ModelVisual3D>
+                    <ModelVisual3D.Content>
+                        <Model3DGroup>
+
+                            <DirectionalLight x:Name="luzUm" Color="White" Direction="-1, -0.5, -1" />
+                            <DirectionalLight x:Name="luzDois" Color="White" Direction="1, -0.5, 1" />
+
+                            <GeometryModel3D x:Name="chao">
+
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+
+                                        <MeshGeometry3D.Positions>
+                                            -50, 0, 50   
+                                            50, 0, 50   
+                                            50, 0, -50  
+                                            -50, 0, -50
+                                        </MeshGeometry3D.Positions>
+
+                                        <MeshGeometry3D.TextureCoordinates>
+                                            0, 0    
+                                            20, 0   
+                                            20, 20  
+                                            0, 20
+                                        </MeshGeometry3D.TextureCoordinates>
+
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 1, 2
+                                            0, 2, 3
+                                        </MeshGeometry3D.TriangleIndices>
+
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial>
+                                        <DiffuseMaterial.Brush>
+                                            <ImageBrush 
+                                                ImageSource="/pedra.jpeg"
+                                                TileMode="Tile" 
+                                                ViewportUnits="Absolute" />
+                                        </DiffuseMaterial.Brush>
+                                    </DiffuseMaterial>
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="comodo1">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+
+                                        <MeshGeometry3D.Positions>
+                                            -2, 0, 2  
+                                            2, 0, 2  
+                                            2, 0, -2 
+                                            -2, 0, -2 
+                                            -2, 4, 2  
+                                            2, 4, 2  
+                                            2, 4, -2 
+                                            -2, 4, -2
+                                        </MeshGeometry3D.Positions>
+
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 1, 5   
+                                            0, 5, 4
+                                            3, 2, 6
+                                            3, 6, 7
+                                            1, 2, 6
+                                            1, 6, 5
+                                            3, 0, 4
+                                            3, 4, 7
+                                            4, 5, 6
+                                            4, 6, 7
+                                            0, 3, 2
+                                            0, 2, 1
+                                        </MeshGeometry3D.TriangleIndices>
+
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="BlueViolet" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="comodo2">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+                                        <MeshGeometry3D.Positions>
+                                            2, 0, 2, 
+                                            6, 0, 2, 
+                                            6, 0, -2, 
+                                            2, 0, -2, 
+                                            2, 4, 2, 
+                                            6, 4, 2, 
+                                            6, 4, -2, 
+                                            2, 4, -2
+                                        </MeshGeometry3D.Positions>
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 1, 5  
+                                            0, 5, 4  
+                                            1, 2, 6  
+                                            1, 6, 5  
+                                            2, 3, 7  
+                                            2, 7, 6 
+                                            3, 0, 4  
+                                            3, 4, 7  
+                                            4, 5, 6  
+                                            4, 6, 7 
+                                            0, 3, 2 
+                                            0, 2, 1
+                                        </MeshGeometry3D.TriangleIndices>
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="Yellow" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="comodo3">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+                                        <MeshGeometry3D.Positions>
+                                            -2, 0, -2, 
+                                            2, 0, -2, 
+                                            2, 0, -6, 
+                                            -2, 0, -6 
+                                            -2, 4, -2, 
+                                            2, 4, -2, 
+                                            2, 4, -6, 
+                                            -2, 4, -6
+                                        </MeshGeometry3D.Positions>
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 1, 5 
+                                            0, 5, 4 
+                                            1, 2, 6 
+                                            1, 6, 5 
+                                            2, 3, 7 
+                                            2, 7, 6 
+                                            3, 0, 4 
+                                            3, 4, 7 
+                                            4, 5, 6 
+                                            4, 6, 7 
+                                            0, 3, 2 
+                                            0, 2, 1
+                                        </MeshGeometry3D.TriangleIndices>
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="Aquamarine" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="telhado">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+                                        <MeshGeometry3D.Positions>
+                                            -2, 4, 2  
+                                            6, 4, 2  
+                                            6, 4, -6 
+                                            -2, 4, -6 
+                                            2, 6, 2  
+                                            2, 6, -6
+                                        </MeshGeometry3D.Positions>
+
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 4, 5
+                                            0, 5, 3
+                                            1, 2, 5
+                                            1, 5, 4
+                                            0, 1, 4
+                                            2, 3, 5
+                                        </MeshGeometry3D.TriangleIndices>
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="Tomato" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="coluna">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D>
+
+                                        <MeshGeometry3D.Positions>
+                                            5.50, 0, -6.00   
+                                            6.00, 0, -6.00   
+                                            6.00, 0, -5.50   
+                                            5.50, 0, -5.50   
+                                            5.50, 4, -6.00   
+                                            6.00, 4, -6.00   
+                                            6.00, 4, -5.50   
+                                            5.50, 4, -5.50
+                                        </MeshGeometry3D.Positions>
+
+                                        <MeshGeometry3D.TriangleIndices>
+                                            0, 1, 5 
+                                            0, 5, 4
+                                            1, 2, 6 
+                                            1, 6, 5 
+                                            2, 3, 7 
+                                            2, 7, 6 
+                                            3, 0, 4 
+                                            3, 4, 7 
+                                            4, 5, 6 
+                                            4, 6, 7 
+                                            0, 3, 2 
+                                            0, 2, 1
+                                        </MeshGeometry3D.TriangleIndices>
+                                    </MeshGeometry3D>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="Gray" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                        </Model3DGroup>
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+            </Viewport3D.Children>
+
+        </Viewport3D>
+    </Grid>
+</Window>
